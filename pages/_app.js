@@ -1,12 +1,25 @@
 import React from 'react';
 import { Toaster } from 'react-hot-toast';
 import { AnimatePresence } from 'framer-motion';
+import { motion } from 'framer-motion';
 
 import { Layout, AlreadyVisited } from '../components';
 import { AppContext } from '../context/AppContext';
 import { createGlobalStyle, ThemeProvider } from 'styled-components';
 
 import '../styles/globals.css';
+
+const pageVariants = {
+	initial: {
+	  opacity: 0,
+	},
+	in: {
+	  opacity: 1,
+	},
+	out: {
+	  opacity: 0,
+	},
+}
 
 const theme = {
     colors: {
@@ -57,7 +70,9 @@ export default function MyApp({ Component, pageProps, router }) {
                 <AnimatePresence exitBeforeEnter>
                     <Layout>
                         <Toaster />
-                        <Component key={router.route} {...pageProps}  />
+                        <motion.div key={router.route} initial="initial" animate="in" exit="out" variants={pageVariants}>
+                            <Component  {...pageProps}  />
+                        </motion.div>
                     </Layout>
                 </AnimatePresence>
             </ThemeProvider>

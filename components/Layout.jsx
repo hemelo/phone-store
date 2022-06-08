@@ -1,7 +1,6 @@
 import React from 'react';
 import Head from 'next/head';
 import styled from 'styled-components'
-import { motion } from 'framer-motion';
 
 import Navbar from './Navbar';
 import Footer from './Footer';
@@ -47,18 +46,6 @@ const Main = styled.main`
 	flex-grow: 1;
 `
 
-const pageVariants = {
-	initial: {
-	  opacity: 0,
-	},
-	in: {
-	  opacity: 1,
-	},
-	out: {
-	  opacity: 0,
-	},
-}
-
 export default function Layout({ children }){
 	return (
 		<Body>
@@ -72,9 +59,7 @@ export default function Layout({ children }){
 					<Navbar />
 				</HeaderWrapper>
 				<Main>
-					<motion.div  initial="initial" animate="in" exit="out" variants={pageVariants}>
-						{children}
-					</motion.div>
+					{children}
 				</Main>
 				<Footer />
 			</Wrapper>
