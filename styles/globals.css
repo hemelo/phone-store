@@ -1,9 +1,15 @@
+@import url('https://fonts.googleapis.com/css2?family=Manrope:wght@200;300;400;500;600;700;800&display=swap');
+
 html,
-body {
+body,
+* {
   padding: 0;
   margin: 0;
-  font-family: -apple-system, BlinkMacSystemFont, Segoe UI, Roboto, Oxygen,
+  font-family: 'Manrope', -apple-system, BlinkMacSystemFont, Segoe UI, Roboto, Oxygen,
     Ubuntu, Cantarell, Fira Sans, Droid Sans, Helvetica Neue, sans-serif;
+  box-sizing: border-box;
+ 
+
 }
 
 a {
@@ -11,6 +17,42 @@ a {
   text-decoration: none;
 }
 
-* {
-  box-sizing: border-box;
+.modal {
+  animation: scale-up-center 0.3s cubic-bezier(0.250, 0.460, 0.450, 0.940) both;
+  border: 0;
+  outline: none;
+  border-radius: 15px;
+  position: absolute; 
+  top: 12rem; 
+  right: 30rem; 
+  bottom: 12rem; 
+  height: fit-content;
+  left: 30rem;
+  padding: 40px;
+}
+
+.modal .close-button { 
+  z-index: 9999999;
+}
+
+.modal-overlay {
+  z-index: 999999;
+  position: fixed; 
+  top: 0;
+  right: 0;
+  bottom: 0;
+  left: 0;
+  background-color: rgba(0, 0, 0, 0.5)
+}
+
+@keyframes scale-up-center {
+  0% {
+    transform: scale(0.5);
+  }
+  70% {
+    transform: scale(1.1);
+  }
+  100% {
+    transform: scale(1);
+  }
 }
