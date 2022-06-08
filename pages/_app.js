@@ -55,9 +55,9 @@ export default function MyApp({ Component, pageProps, router }) {
             <ThemeProvider theme={theme}>
                 <AlreadyVisited />
                 <AnimatePresence exitBeforeEnter>
-                    <Layout key={router.route}>
+                    <Layout>
                         <Toaster />
-                        <Component {...pageProps}  />
+                        <Component key={router.route} {...pageProps}  />
                     </Layout>
                 </AnimatePresence>
             </ThemeProvider>

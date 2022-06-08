@@ -62,22 +62,22 @@ const pageVariants = {
 export default function Layout({ children }){
 	return (
 		<Body>
-			<motion.div  initial="initial" animate="in" exit="out" variants={pageVariants}>
-				<Wrapper>
-					<Head>
-						<title>Ape Phones</title>
-						<meta name="description" content="A small ecommerce application made with Next.js, React, Sanity and Stripe" />
-						<link rel="icon" href="/favicon.ico" />
-					</Head>
-					<HeaderWrapper>
-						<Navbar />
-					</HeaderWrapper>
-					<Main>
+			<Wrapper>
+				<Head>
+					<title>Ape Phones</title>
+					<meta name="description" content="A small ecommerce application made with Next.js, React, Sanity and Stripe" />
+					<link rel="icon" href="/favicon.ico" />
+				</Head>
+				<HeaderWrapper>
+					<Navbar />
+				</HeaderWrapper>
+				<Main>
+					<motion.div  initial="initial" animate="in" exit="out" variants={pageVariants}>
 						{children}
-					</Main>
-					<Footer />
-				</Wrapper>
-			</motion.div>
+					</motion.div>
+				</Main>
+				<Footer />
+			</Wrapper>
 		</Body>
 	)
 }
