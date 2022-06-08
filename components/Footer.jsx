@@ -1,6 +1,8 @@
 import React from 'react';
-import { AiFillInstagram, AiOutlineTwitter} from 'react-icons/ai';
+import { AiFillGithub } from 'react-icons/ai';
 import styled from 'styled-components'
+
+import socials from '../socials'
 
 const Wrapper = styled.div`
     text-align: center;
@@ -30,8 +32,9 @@ export default function Footer() {
         <Wrapper>
             <Copyright>{new Date().getFullYear()} Ape Phones. Desenvolvido por Henrique Melo.</Copyright>
             <Icons>
-                <AiFillInstagram />
-                <AiOutlineTwitter />
+                <a href={socials.github.url} target="_blank" rel="noreferrer">
+                    <AiFillGithub />
+                </a>
             </Icons>
         </Wrapper>
     )
